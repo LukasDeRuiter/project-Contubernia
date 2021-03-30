@@ -1,0 +1,376 @@
+.navBar{
+    background-color: blue;
+    height: 25px;
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    z-index: 100;
+    border: 3px solid black;
+    text-align: center;
+    
+  }
+  
+  .gameScreen{
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    margin: 0 auto;
+    background-color: red;
+    width: auto;
+    height: 898px;
+    border: 6px solid black;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  @keyframes nextTurn{
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  @keyframes yourTurn{
+    0% {opacity: 1}
+    100% {opacity: 1}
+  }
+  
+  /* Next turn button in right corner */
+  .nextTurnBtn{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: green;
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 10;
+    grid-row-end: 11;
+  }
+  .gameDate{
+    background-color: rgb(0, 113, 128);
+    margin: 0 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .gameTurn{
+    background-color: rgb(69, 3, 250);
+    margin-top: 0;
+    margin-bottom: 0;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .theButton{
+    background-color: rgb(212, 11, 212);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+  }
+
+  .generalRescourseInformation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #00aeff;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .sestertius{
+    display: inline-block;
+    margin: 0 auto;
+  }
+  .dignitas{
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .food{
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .resourceImg{
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* General information screen */
+  .generalInformation{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    background-color: #98B847;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 9;
+  }
+  
+  .trainingBtnContainer{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: green;
+    margin: 0 1px;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    border: 2px solid black;
+  }
+  .trainingBtn{
+    border: 2px solid black;
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .informationTitle{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border: 2px solid black;
+  }
+
+  .upgradeContainer{
+    display: none;
+    grid-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: green;
+    margin: 0 1px;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    border: 2px solid black;
+  }
+  
+  /* Buy information tooltipbar */
+
+  .costinfo {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: brown;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 9;
+    grid-row-end: 11;
+  }
+
+  .buyInformation{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border: 2px solid black;
+    margin: 0 1px;
+    text-align: center;
+  }
+
+  .costInformation{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: 2px solid black;
+    margin: 0 0px;
+    background-color: #EC9313;
+    color: #136CEC
+  }
+
+  .benefitInformation{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: 2px solid black;
+    margin: 0 0px;
+    background-color: #136CEC;
+    color: #EC9313;
+  }
+
+  /* Unitcards */
+
+  .unitCards{
+    display: flex;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 5px 5px 5px 5px;
+    background-color: #5977A6;
+    border: 3px solid black;
+    grid-column-start: 3;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 9;
+  }
+  
+
+
+
+.unitContainer{
+  display: grid;
+  box-shadow: 5px 5px black;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  background-color: #A68859;
+  margin: 0px 5px;
+  border: 3px solid black;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+
+}
+
+.unitContainer:hover{
+  background-color:rgb(69, 3, 250);
+}
+
+.unitImg{
+  background: url(images/unitBackground.png);
+width: 50px;
+height: 50px;
+border: 2px solid black;
+grid-column-start: 1;
+grid-column-end: 2;
+grid-row-start: 1;
+grid-row-end: 2;
+align-items: center;
+}
+
+.unitActionImg{
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-items: center;
+  }
+
+  .unitName{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .rankName{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .unitHealth{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    align-items: center;
+  }
+
+/* unit information box */
+.unitStats {
+  background-color: #6747B8;
+  grid-column-start: 3;
+  grid-column-end: 10;
+  grid-row-start: 9;
+  grid-row-end: 11;
+  padding: 5px 5px 5px 5px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.barInfoBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+}
+
+.xpbar1{
+  background-color: #63899C;
+  height: 10px;
+  width: 80px;
+  top: 50%;
+  left: 50%;
+  border: 2px solid black;
+}
+
+.xpbar2{
+  background-color: #327DCD;
+  height: 100%;
+  width: 0%;
+}
+
+.healthbar1{
+  background-color: rgb(243, 107, 107);
+  height: 10px;
+  width: 80px;
+  top: 50%;
+  left: 50%;
+  border: 2px solid black;
+}
+
+.healthbar2{
+  background-color: #f01212;
+  height: 100%;
+  width: 0%;
+}
+
+.energybar1{
+  background-color: #e6e787;
+  height: 10px;
+  width: 80px;
+  top: 50%;
+  left: 50%;
+  border: 2px solid black;
+}
+
+.energybar2{
+  background-color: #ff0e93;
+  height: 100%;
+  width: 0%;
+}
+
+/* building map */
+
+.buildingMap{
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(40, 1fr);
+  background-color: green;
+  border: 2px solid black;
+  grid-column-start: 3;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end: 7;
+}
+
+.buildingTile{
+  border: 2px solid black;
+}

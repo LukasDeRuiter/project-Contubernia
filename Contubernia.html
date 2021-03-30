@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Contubernia.css">
+    <title>Contubernia by Lukas de Ruiter</title>
+</head>
+
+<nav class="navBar">
+    Contubernia
+  </nav>
+
+  <body>
+    <div class="gameScreen" id="mainScreen">
+
+      <div class="nextTurnBtn">
+        <p class="gameDate" id="gameDateId">January 69 A.D.</p>
+        <p class="gameTurn" id="gameTurnId">Turn: 1</p>
+        <div class="theButton" id="theButtonId">End Turn</div>
+         </div>
+
+         <div class="buildingMap"> 
+          <div class="buildingTile"></div>
+          <div class="buildingTile"></div>
+          <div class="buildingTile"></div>
+        </div>
+
+
+      <div class="unitStats">
+        <div class="barInfoBox">
+        <p id="nameOfUnit"></p>
+        </div>
+        <div class="barInfoBox">
+        <p id="classOfUnit"></p>
+        </div>
+        <div class="barInfoBox">
+        <p id="strengthOfUnit"></p>
+        </div>
+        <div class="barInfoBox">
+        <p id="gravitasOfUnit"></p>
+        </div>
+        <div class="barInfoBox">
+        <p id="intelligenceOfUnit"></p>
+        </div>
+        <div class="barInfoBox">
+        <p id="cunningOfUnit"></p>
+        </div>
+        <div class="barInfoBox">
+          <p id="healthPointsOfUnit">Health: 100/100</p>
+          <div class="healthbar1" id="">
+          <div class="healthbar2" id="healthBarFigure"></div></div>
+          </div>
+          <div class="barInfoBox">
+          <p id="energyOfUnit">Energy: 100/100</p>
+          <div class="energybar1" id="">
+          <div class="energybar2" id="energyBarFigure"></div></div>
+          </div>
+          <div class="barInfoBox">
+          <p id="experiencePointsOfUnit">experience: 0/0</p>
+            <div class="xpbar1" id="">
+            <div class="xpbar2" id="experienceBarFigure"></div></div>
+          </div>
+      </div>
+
+      <div class="generalRescourseInformation">
+        <div class="sestertius">
+        <p id="currentSestertius"><img src="images/sestertius.png" class="resourceImg">:  0</p></div>
+        <div class="dignitas">
+        <p id="currentDignitas"><img src="images/dignitas.png" class="resourceImg">:  0/1000</p></div>
+        <div class="food">
+        <p id="currentFood"><img src="images/food.png" class="resourceImg">:  0/0</p></div>
+      </div>
+
+      <div class="generalInformation">
+          <button id="generateUnits">GUNGAGINGA</button>
+
+          <div class="trainingBtnContainer">
+          <div class="informationTitle">Daily Training</div>
+          <div class="trainingBtn" id="trainingBtnMarch"><img src="images/marchIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnInform"><img src="images/informIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnPatronize"><img src="images/patronizeIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnPhilosophy"><img src="images/philosophyIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnAthletics"><img src="images/athleticsIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnProwess"><img src="images/prowessIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnConstructing"><img src="images/constructingIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnPlotting"><img src="images/plottingIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnTheologize"><img src="images/theologizeIcon.png" class="resourceImg"> </div>
+          <div class="trainingBtn" id="trainingBtnMeditation"><img src="images/meditationIcon.png" class="resourceImg"> </div>
+          </div>
+
+
+          <div class="upgradeContainer" id ="unit1Upgrade">
+            <div class="informationTitle">units1</div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            <div class="trainingBtn"></div>
+            </div>
+            <div class="upgradeContainer" id ="unit2Upgrade">
+              <div class="informationTitle">units2</div>
+              <div class="trainingBtn" id="armorUpgradeUnit2"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+              <div class="trainingBtn" id="evocatiUpgrade2"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+              <div class="trainingBtn" id="eagleUpgrade2"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+              <div class="trainingBtn" id="firstUpgrade2"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+              <div class="trainingBtn" id="armoredUpgrade2"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+              <div class="trainingBtn"></div>
+              <div class="trainingBtn"></div>
+              <div class="trainingBtn"></div>
+              <div class="trainingBtn"></div>
+              <div class="trainingBtn"></div>
+              </div>
+              <div class="upgradeContainer" id ="unit3Upgrade">
+                <div class="informationTitle">units3</div>
+                <div class="trainingBtn" id="armorUpgradeUnit3"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+                <div class="trainingBtn" id="evocatiUpgrade3"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+                <div class="trainingBtn" id="eagleUpgrade3"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+                <div class="trainingBtn" id="firstUpgrade3"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+                <div class="trainingBtn" id="armoredUpgrade3"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+                <div class="trainingBtn"></div>
+                <div class="trainingBtn"></div>
+                <div class="trainingBtn"></div>
+                <div class="trainingBtn"></div>
+                <div class="trainingBtn"></div>
+                </div>
+                <div class="upgradeContainer" id ="unit4Upgrade">
+                  <div class="trainingBtn" id="armorUpgradeUnit4"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+                  <div class="trainingBtn" id="evocatiUpgrade4"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+                  <div class="trainingBtn" id="eagleUpgrade4"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+                  <div class="trainingBtn" id="firstUpgrade4"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+                  <div class="trainingBtn" id="armoredUpgrade4"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+                  <div class="trainingBtn"></div>
+                  <div class="trainingBtn"></div>
+                  <div class="trainingBtn"></div>
+                  <div class="trainingBtn"></div>
+                  <div class="trainingBtn"></div>
+                  <div class="trainingBtn"></div>
+                  </div>
+                  <div class="upgradeContainer" id ="unit5Upgrade">
+                    <div class="trainingBtn" id="armorUpgradeUnit5"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+                    <div class="trainingBtn" id="evocatiUpgrade5"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+                    <div class="trainingBtn" id="eagleUpgrade5"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+                    <div class="trainingBtn" id="firstUpgrade5"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+                    <div class="trainingBtn" id="armoredUpgrade5"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+                    <div class="trainingBtn"></div>
+                    <div class="trainingBtn"></div>
+                    <div class="trainingBtn"></div>
+                    <div class="trainingBtn"></div>
+                    <div class="trainingBtn"></div>
+                    <div class="trainingBtn"></div>
+                    </div>
+
+                    <div class="upgradeContainer" id ="unit6Upgrade">
+                      <div class="trainingBtn" id="armorUpgradeUnit6"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+                      <div class="trainingBtn" id="evocatiUpgrade6"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+                      <div class="trainingBtn" id="eagleUpgrade6"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+                      <div class="trainingBtn" id="firstUpgrade6"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+                      <div class="trainingBtn" id="armoredUpgrade6"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+                      <div class="trainingBtn"></div>
+                      <div class="trainingBtn"></div>
+                      <div class="trainingBtn"></div>
+                      <div class="trainingBtn"></div>
+                      <div class="trainingBtn"></div>
+                      <div class="trainingBtn"></div>
+                      </div>
+
+                      <div class="upgradeContainer" id ="unit7Upgrade">
+                        <div class="trainingBtn" id="armorUpgradeUnit7"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+                        <div class="trainingBtn" id="evocatiUpgrade7"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+                        <div class="trainingBtn" id="eagleUpgrade7"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+                        <div class="trainingBtn" id="firstUpgrade7"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+                        <div class="trainingBtn" id="armoredUpgrade7"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+                        <div class="trainingBtn"></div>
+                        <div class="trainingBtn"></div>
+                        <div class="trainingBtn"></div>
+                        <div class="trainingBtn"></div>
+                        <div class="trainingBtn"></div>
+                        <div class="trainingBtn"></div>
+                        </div>
+
+                        <div class="upgradeContainer" id ="unit8Upgrade">
+                          <div class="trainingBtn" id="armorUpgradeUnit8"><img src="images/armorUpgradeIcon.png" class="resourceImg"></div>
+                          <div class="trainingBtn" id="evocatiUpgrade8"><img src="images/evocatiUpgradeIcon.png" class="resourceImg"></div>
+                          <div class="trainingBtn" id="eagleUpgrade8"><img src="images/eagleUpgradeIcon.png" class="resourceImg"></div>
+                          <div class="trainingBtn" id="firstUpgrade8"><img src="images/firstUpgradeIcon.png" class="resourceImg"></div>
+                          <div class="trainingBtn" id="armoredUpgrade8"><img src="images/armoredUpgradeIcon.png" class="resourceImg"></div>
+                          <div class="trainingBtn"></div>
+                          <div class="trainingBtn"></div>
+                          <div class="trainingBtn"></div>
+                          <div class="trainingBtn"></div>
+                          <div class="trainingBtn"></div>
+                          <div class="trainingBtn"></div>
+                          </div>
+
+                          <div class="upgradeContainer" id ="unit9Upgrade">
+                            <div class="trainingBtn" ></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            <div class="trainingBtn"></div>
+                            </div>
+
+                            <div class="upgradeContainer" id ="unit10Upgrade">
+                              <div class="trainingBtn" ></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              <div class="trainingBtn"></div>
+                              </div>
+            
+
+           
+             </div>
+             <div class="costinfo">
+              <p class="buyInformation" id="buyInfo"> </p>
+              <p class="costInformation" id="theCosts">Cost: 0</p>
+              <p class="benefitInformation" id="benefits">+2 strength</p>
+            </div>
+          
+             
+
+      <div class="unitCards">
+        <div class="unitContainer" id="unit1">
+            <img src="images/decanus1GIF.gif" class="unitImg" id="unit1Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit1Action" alt="">
+             <p class="unitName" id="unitName1">Name </p>
+             <p class="rankName" id="unitLevel1">Level: 0 </p>
+             <div class="healthbar1 unitHealth" id="">
+              <div class="healthbar2" id="healthBarFigure"></div></div>
+              </div>
+                
+            <div class="unitContainer" id="unit2">
+            <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit2Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit2Action" alt="">
+            <p class="unitName" id="unitName2">Name </p>
+            <p class="rankName" id="unitLevel2">Level: 0 </p>
+            <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+            </div>
+                
+                
+            <div class="unitContainer" id="unit3">        
+             <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit3Img" alt="">
+             <img src="images/idleGIF.gif" class="unitActionImg" id="unit3Action" alt="">
+             <p class="unitName" id="unitName3">Name </p>
+             <p class="rankName" id="unitLevel3">Level: 0 </p>
+             <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+             </div>
+                
+            <div class="unitContainer" id="unit4">
+            <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit4Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit4Action" alt="">
+            <p class="unitName" id="unitName4">Name </p>
+            <p class="rankName" id="unitLevel4">Level: 0 </p>
+            <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+            </div>
+                
+            <div class="unitContainer" id="unit5">
+            <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit5Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit5Action" alt="">
+            <p class="unitName" id="unitName5">Name </p>
+            <p class="rankName" id="unitLevel5">Level: 0 </p>
+            <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+          </div>
+                
+            <div class="unitContainer" id="unit6">
+            <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit6Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit6Action" alt="">
+            <p class="unitName" id="unitName6">Name </p>
+            <p class="rankName" id="unitLevel6">Level: 0 </p>
+            <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+            </div>
+                
+            <div class="unitContainer" id="unit7">
+            <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit7Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit7Action" alt="">
+            <p class="unitName" id="unitName7">Name </p>
+            <p class="rankName" id="unitLevel7">Level: 0 </p>
+            <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+            </div>
+                
+            <div class="unitContainer" id="unit8">
+            <img src="images/legionaryGIFarmor0unitType0.gif" class="unitImg" id="unit8Img" alt="">
+            <img src="images/idleGIF.gif" class="unitActionImg" id="unit8Action" alt="">
+            <p class="unitName" id="unitName8">Name </p>
+            <p class="rankName" id="unitLevel8">Level: 0 </p>
+            <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+            </div>
+                
+            <div class="unitContainer" id="unit9">    
+             <img src="images/auxilia1GIF.gif" class="unitImg" id="unit9Img" alt="">
+             <img src="images/idleGIF.gif" class="unitActionImg" id="unit9Action" alt="">
+             <p class="unitName" id="unitName9">Name </p>
+             <p class="rankName" id="unitLevel9">Level: 0 </p>
+             <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+             </div>
+                
+            <div class="unitContainer" id="unit10">    
+             <img src="images/auxilia1GIF.gif" class="unitImg" id="unit10Img" alt="">
+             <img src="images/idleGIF.gif" class="unitActionImg" id="unit10Action" alt="">
+             <p class="unitName" id="unitName10">Name </p>
+             <p class="rankName" id="unitLevel10">Level: 0 </p>
+             <div class="healthbar1 unitHealth" id="">
+            <div class="healthbar2" id="healthBarFigure"></div></div>
+            </div>
+
+
+    
+    </div>
+    
+  </body>
+
+<script src="Contubernia.js"></script>
+</html>
