@@ -408,3 +408,24 @@ align-items: center;
   width: 37px;
   height: 26px;
 }
+
+/* turnInformation */
+.turnInformation{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: teal;
+  grid-column-start: 10;
+  grid-column-end: 12;
+  grid-row-start: 7;
+  grid-row-end: 10;
+}
+
+.changeResourceContainer{
+  background-color: green;
+  border: 3px solid rgb(21, 90, 21);
+  margin: 0 0px;
+  text-align: center;
+  width: 95%;
+  height: 80px;
+}

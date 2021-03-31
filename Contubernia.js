@@ -82,6 +82,14 @@ let SelectedUnit;
 
 let totalGold = 0;
 
+document.querySelectorAll(".trainingBtn").forEach(trainingBtn => trainingBtn.addEventListener('mouseenter', function(){
+    trainingBtn.style.backgroundColor = "blue";
+}))
+
+document.querySelectorAll(".trainingBtn").forEach(trainingBtn => trainingBtn.addEventListener('mouseleave', function(){
+    trainingBtn.style.backgroundColor = "gray";
+}))
+
 let unit1Up = document.getElementById('unit1Upgrade');
 let unit2Up = document.getElementById('unit2Upgrade');
 let unit3Up = document.getElementById('unit3Upgrade');
