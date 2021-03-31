@@ -1498,6 +1498,77 @@ _armoredUpgrade8.addEventListener('click', function(){
     _armoredUpgrade8.remove();
 })
 
+/* Auxilia upgrades */
+_farm1 = document.getElementById('farm1');
+_farmMainUpgrade1 = document.getElementById('farmMainUpgrade1');
+_farmLandUpgrade1 = document.getElementById('farmLandUpgrade1');
+let farm1Level = 0;
+let farm1Land1Upgrade = 0;
+
+_farmMainUpgrade1.addEventListener('click', function(){
+    if(farm1Level >= 4){
+    farm1Level += 1;
+    _farm1.src = `images/buildingmap/farmMain${farm1Level}.png`;
+    _farmMainUpgrade1.remove();
+} else if(farm1Level === 0){
+    farm1Level += 1;
+    _farm1.src = `images/buildingmap/farmMain${farm1Level}.png`;
+    for(i = 1; i < 6; i++){
+    document.getElementById(`farm1Land${i}`).src = `images/buildingmap/farmLand${i}.png`
+    }
+} else{
+    farm1Level += 1;
+    _farm1.src = `images/buildingmap/farmMain${farm1Level}.png`;
+}
+})
+
+_farmLandUpgrade1.addEventListener('click', function() {
+    if(farm1Level >= 1){
+        if(farm1Land1Upgrade >= 4){
+    farm1Land1Upgrade += 1;
+    document.getElementById(`farm1Land${farm1Land1Upgrade}`).src = `images/buildingmap/farmLand${farm1Land1Upgrade}up1.png`;
+    _farmLandUpgrade1.remove(); 
+    } else{
+        farm1Land1Upgrade += 1;
+        document.getElementById(`farm1Land${farm1Land1Upgrade}`).src = `images/buildingmap/farmLand${farm1Land1Upgrade}up1.png`;
+    }
+}})
+
+_farm2 = document.getElementById('farm2');
+_farmMainUpgrade2 = document.getElementById('farmMainUpgrade2');
+_farmLandUpgrade2 = document.getElementById('farmLandUpgrade2');
+let farm2Level = 0;
+let farm2Land1Upgrade = 0;
+
+_farmMainUpgrade2.addEventListener('click', function(){
+    if(farm2Level >= 4){
+    farm2Level += 1;
+    _farm2.src = `images/buildingmap/farmMain${farm2Level}.png`;
+    _farmMainUpgrade2.remove();
+} else if(farm2Level === 0){
+    farm2Level += 1;
+    _farm2.src = `images/buildingmap/farmMain${farm2Level}.png`;
+    for(i = 1; i < 6; i++){
+    document.getElementById(`farm2Land${i}`).src = `images/buildingmap/farmLand${i}.png`
+    }
+} else{
+    farm2Level += 1;
+    _farm2.src = `images/buildingmap/farmMain${farm2Level}.png`;
+}
+})
+
+_farmLandUpgrade2.addEventListener('click', function() {
+    if(farm2Level >= 1){
+        if(farm2Land1Upgrade >= 4){
+    farm2Land1Upgrade += 1;
+    document.getElementById(`farm2Land${farm2Land1Upgrade}`).src = `images/buildingmap/farmLand${farm2Land1Upgrade}up1.png`;
+    _farmLandUpgrade2.remove(); 
+    } else{
+        farm2Land1Upgrade += 1;
+        document.getElementById(`farm2Land${farm2Land1Upgrade}`).src = `images/buildingmap/farmLand${farm2Land1Upgrade}up1.png`;
+    }
+}})
+
 /* tooltips for upgrades */
 _evocatiUpgrade2.addEventListener('mouseenter', function(){
     buyInformation.innerHTML = "Upgrade unit to Evocati";
