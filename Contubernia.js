@@ -1749,12 +1749,34 @@ let _unitLevel8 = document.getElementById('unitLevel8');
 let _unitLevel9 = document.getElementById('unitLevel9');
 let _unitLevel10 = document.getElementById('unitLevel10');
 
+function displayResourceChange(resource, timer) {
+    setTimeout(function() {
+    resource.style.display = "flex";
+    resource.style.animation = "resourceAfterNextTurn 1s 1";
+    resource.onanimationend = () => {
+        resource.style.animation = "resource2 1s 1";
+        resource.onanimationend = () => {
+            resource.style.display = "none";
+        }
+    }
+}, timer)}
+
+let _goldChange = document.getElementById('goldChange');
+let _stoneChange = document.getElementById('stoneChange');
+let _woodChange = document.getElementById('woodChange');
+let _foodChange = document.getElementById('foodChange');
+let _dignitasChange = document.getElementById('dignitasChange');
+let actualFoodChanged = 0;
+let plusOrMinus;
+let oldDignitas = 0;
+let changedDignitas = 0;
+
 buttonForNextTurn.addEventListener('click', function(){
 
     /* Happens every turn */
     currentGameTurn += 1;
     _gameTurn.innerHTML = `Turn: ${currentGameTurn}`;
-    _gameScreen.style.animation = "nextTurn 2s 1";
+    _gameScreen.style.animation = "nextTurn 1s 1";
     _gameScreen.onanimationend = function (){
         _gameScreen.style.animation = "yourTurn 2s 1";
     }
@@ -1768,6 +1790,8 @@ buttonForNextTurn.addEventListener('click', function(){
     trainingOfUnit8.src = "images/idleGIF.gif";
     trainingOfUnit9.src = "images/idleGIF.gif";
     trainingOfUnit10.src = "images/idleGIF.gif";
+
+    oldDignitas = dignitas;
 
     totalGold += units[1].goldPerTurn;
     _currentSestertius.innerHTML = `<img src="images/sestertius.png" class="resourceImg">:  ${totalGold}`;
@@ -1795,7 +1819,13 @@ buttonForNextTurn.addEventListener('click', function(){
 
     totalFoodCreate = (units[9].foodCreate + units[10].foodCreate);
     totalFoodUse = units[1].foodUse + units[2].foodUse + units[3].foodUse + units[4].foodUse + units[5].foodUse + units[6].foodUse + units[7].foodUse + units[8].foodUse + units[9].foodUse + units[10].foodUse;
-    totalFood = totalFood + (totalFoodCreate - totalFoodUse);
+    actualFoodChanged = (totalFoodCreate - totalFoodUse);
+    totalFood = totalFood + actualFoodChanged;
+    if(actualFoodChanged >= 1){
+        plusOrMinus = "+";
+    } else {
+        plusOrMinus = " ";
+    }
     _currentFood.innerHTML = `<img src="images/food.png" class="resourceImg">:  ${totalFood}/${totalFoodUse}`;
 
     _unitLevel1.innerHTML = `Level: ${units[1].level}`;
@@ -1808,6 +1838,16 @@ buttonForNextTurn.addEventListener('click', function(){
     _unitLevel8.innerHTML = `Level: ${units[8].level}`;
     _unitLevel9.innerHTML = `Level: ${units[9].level}`;
     _unitLevel10.innerHTML = `Level: ${units[10].level}`;
+
+    changedDignitas = (dignitas - oldDignitas);
+    _goldChange.innerHTML = `+${units[1].goldPerTurn} gold!`
+    _foodChange.innerHTML = `${plusOrMinus} ${actualFoodChanged} food!`
+    _dignitasChange.innerHTML = `+ ${changedDignitas} more dignitas!`
+    displayResourceChange(_goldChange, 0);
+    displayResourceChange(_stoneChange, 2000);
+    displayResourceChange(_woodChange, 4000);
+    displayResourceChange(_foodChange, 6000);
+    displayResourceChange(_dignitasChange, 8000);
 
     /* If next turn is clicked, this will set the next month and year */
     if(currentMonth <= 10){
