@@ -1761,6 +1761,43 @@ function displayResourceChange(resource, timer) {
     }
 }, timer)}
 
+function displayUnitLevelInHouse(Unit, chosenHouseLocation){
+    if(units[Unit].level === 50){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House10.png`;
+    }
+    else if(units[Unit].level === 45){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House9.png`;
+    }
+    else if(units[Unit].level === 40){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House8.png`;
+    }
+    else if(units[Unit].level === 35){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House7.png`;
+    }
+    else if(units[Unit].level === 30){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House6.png`;
+    }
+    else if(units[Unit].level === 25){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House5.png`;
+    }
+    else if(units[Unit].level === 20){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House4.png`;
+    }
+    else if(units[Unit].level === 15){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House3.png`;
+    }
+    else if(units[Unit].level === 10){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House2.png`;
+    }
+    else if(units[Unit].level === 5){
+        document.getElementById(`unit${Unit}House`).src = `images/buildingmap/unit${chosenHouseLocation}House1.png`;
+    }
+    else{
+        console.log("noUpgrade");
+    }
+}
+
+
 let _goldChange = document.getElementById('goldChange');
 let _stoneChange = document.getElementById('stoneChange');
 let _woodChange = document.getElementById('woodChange');
@@ -1848,6 +1885,14 @@ buttonForNextTurn.addEventListener('click', function(){
     displayResourceChange(_woodChange, 4000);
     displayResourceChange(_foodChange, 6000);
     displayResourceChange(_dignitasChange, 8000);
+
+    displayUnitLevelInHouse(2, 2);
+    displayUnitLevelInHouse(3, 3);
+    displayUnitLevelInHouse(4, 4);
+    displayUnitLevelInHouse(5, 5);
+    displayUnitLevelInHouse(6, 2);
+    displayUnitLevelInHouse(7, 3);
+    displayUnitLevelInHouse(8, 5);
 
     /* If next turn is clicked, this will set the next month and year */
     if(currentMonth <= 10){
