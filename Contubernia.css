@@ -450,6 +450,32 @@ align-items: center;
   height: 26px;
 }
 
+.blacksmith1{
+  grid-column-start: 21;
+  grid-column-end: 22;
+  grid-row-start: 8;
+  grid-row-end: 9;
+}
+
+.blacksmith2{
+  grid-column-start: 11;
+  grid-column-end: 12;
+  grid-row-start: 16;
+  grid-row-end: 17;
+}
+.tanner1{
+  grid-column-start: 27;
+  grid-column-end: 28;
+  grid-row-start: 12;
+  grid-row-end: 13;
+}
+.tanner2{
+  grid-column-start: 10;
+  grid-column-end: 11;
+  grid-row-start: 14;
+  grid-row-end: 15;
+}
+
 /* turnInformation */
 .turnInformation{
   display: flex;

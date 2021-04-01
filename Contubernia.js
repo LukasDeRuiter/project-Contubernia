@@ -1577,6 +1577,37 @@ _farmLandUpgrade2.addEventListener('click', function() {
     }
 }})
 
+let tannerNum = 0;
+let blacksmithNum = 0;
+
+document.getElementById('tannerUpgrade').addEventListener('click', function(){
+    if(tannerNum >= 9){
+        tannerNum += 1;
+        document.getElementById('tanner2').src = `images/buildingmap/tanner${(tannerNum - 5)}.png`;
+        document.getElementById('tannerUpgrade').remove();
+    } else if(tannerNum >= 5 && tannerNum <= 8){
+        tannerNum += 1;
+        document.getElementById('tanner2').src = `images/buildingmap/tanner${(tannerNum - 5)}.png`;
+    } else{
+        tannerNum += 1;
+        document.getElementById('tanner1').src = `images/buildingmap/tanner${tannerNum}.png`;
+    }
+})
+
+document.getElementById('blacksmithUpgrade').addEventListener('click', function(){
+    if(blacksmithNum >= 9){
+        blacksmithNum += 1;
+        document.getElementById('blacksmith2').src = `images/buildingmap/blacksmith${(blacksmithNum - 5)}.png`;
+        document.getElementById('blacksmithUpgrade').remove();
+    } else if(blacksmithNum >= 5 && blacksmithNum <= 8){
+        blacksmithNum += 1;
+        document.getElementById('blacksmith2').src = `images/buildingmap/blacksmith${(blacksmithNum - 5)}.png`;
+    } else{
+        blacksmithNum += 1;
+        document.getElementById('blacksmith1').src = `images/buildingmap/blacksmith${blacksmithNum}.png`;
+    }
+})
+
 /* tooltips for upgrades */
 _evocatiUpgrade2.addEventListener('mouseenter', function(){
     buyInformation.innerHTML = "Upgrade unit to Evocati";
