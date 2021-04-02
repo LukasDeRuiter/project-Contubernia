@@ -122,7 +122,10 @@
     grid-gap: 5px;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-color: green;
+    background-color: purple;
+    background-image: url('images/BtnContainerBackground.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     margin: 0 1px;
     padding-left: 20%;
     padding-right: 20%;
@@ -130,9 +133,12 @@
     border: 2px solid black;
   }
   .trainingBtn{
-    border: 2px solid black;
+    background-color: rgb(59, 59, 235);
+    border: 2px solid rgb(20, 20, 173);
     width: 24px;
     height: 24px;
+    cursor: pointer;
+
   }
 
 
@@ -149,7 +155,10 @@
     grid-gap: 5px;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-color: green;
+    background-color: purple;
+    background-image: url('images/BtnContainerBackground.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     margin: 0 1px;
     padding-left: 20%;
     padding-right: 20%;
@@ -480,8 +489,12 @@ align-items: center;
 .turnInformation{
   display: flex;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   background-color: teal;
+  background-image: url('images/nextTurnInformationBackground.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   grid-column-start: 10;
   grid-column-end: 12;
   grid-row-start: 7;
@@ -490,12 +503,16 @@ align-items: center;
 
 .changeResourceContainer{
   display: none;
-  background-color: green;
+  background-color: #9aa857;
   border: 3px solid rgb(21, 90, 21);
+  background-image: url('images/resourceChangeBackground.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 0 0px;
-  text-align: center;
   width: 80%;
   height: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes resourceAfterNextTurn{

@@ -83,11 +83,13 @@ let SelectedUnit;
 let totalGold = 0;
 
 document.querySelectorAll(".trainingBtn").forEach(trainingBtn => trainingBtn.addEventListener('mouseenter', function(){
-    trainingBtn.style.backgroundColor = "blue";
+    trainingBtn.style.backgroundColor = "rgb(3, 129, 45)";
+    trainingBtn.style.border = "rgb(6, 87, 33)";
 }))
 
 document.querySelectorAll(".trainingBtn").forEach(trainingBtn => trainingBtn.addEventListener('mouseleave', function(){
-    trainingBtn.style.backgroundColor = "gray";
+    trainingBtn.style.backgroundColor = "rgb(59, 59, 235)";
+    trainingBtn.style.border = "2px solid rgb(20, 20, 173)";
 }))
 
 let unit1Up = document.getElementById('unit1Upgrade');
