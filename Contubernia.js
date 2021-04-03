@@ -1,5 +1,5 @@
 let clickkie = document.getElementById('generateUnits');
-
+let SelectedUnit;
 
 let _currentFood = document.getElementById('currentFood');
 let units = [];
@@ -45,7 +45,40 @@ clickkie.addEventListener('click', function() {
         totalFoodCreate = units[9].foodCreate + units[10].foodCreate;
         totalFood += totalFoodCreate;
         _currentFood.innerHTML = `<img src="images/food.png" class="resourceImg">:  ${totalFood}/${totalFoodUse}`;
-    console.log(units);
+        /* selecting unit 1 here to prevent errors */
+        selectedUnit = 1;
+        unitCard1.style.backgroundColor = "red";
+    unitCard2.style.backgroundColor = "#A68859";
+    unitCard3.style.backgroundColor = "#A68859";
+    unitCard4.style.backgroundColor = "#A68859";
+    unitCard5.style.backgroundColor = "#A68859";
+    unitCard6.style.backgroundColor = "#A68859";
+    unitCard7.style.backgroundColor = "#A68859";
+    unitCard8.style.backgroundColor = "#A68859";
+    unitCard9.style.backgroundColor = "#A68859";
+    unitCard10.style.backgroundColor = "#A68859";
+    displayedNameOfUnit.innerHTML = `Name: ${units[selectedUnit].unitName}`;
+    displayedClassOfUnit.innerHTML = `Role: ${units[selectedUnit].unitClass}`;
+    displayedHealthPointsOfUnit.innerHTML = `Health: ${units[selectedUnit].healthPoints} / ${units[selectedUnit].maxHealthPoints}`;
+    displayHealthInFigure.style.width = parseInt((units[selectedUnit].healthPoints / units[selectedUnit].maxHealthPoints) * 100) + "%";
+    displayedEnergyOfUnit.innerHTML = `Energy: ${units[selectedUnit].energyPoints} / ${units[selectedUnit].maxEnergyPoints}`;
+    displayEnergyInFigure.style.width = parseInt((units[selectedUnit].energyPoints / units[selectedUnit].maxEnergyPoints) * 100) + "%";
+    displayedExperiencePointsOfUnit.innerHTML = `Experience: ${units[selectedUnit].experiencePoints} / ${units[selectedUnit].experienceNeededtoLevelUp}`;
+    displayXpInFigure.style.width = parseInt((units[selectedUnit].experiencePoints / units[selectedUnit].experienceNeededtoLevelUp) * 100) + "%";
+    displayedStrengthOfUnit.innerHTML = `Strength: ${units[selectedUnit].strength}`;
+    displayedGravitasOfUnit.innerHTML = `Gravitas: ${units[selectedUnit].gravitas}`;
+    displayedIntelligenceOfUnit.innerHTML = `Intelligence: ${units[selectedUnit].intelligence}`;
+    displayedCunningOfUnit.innerHTML = `Cunning: ${units[selectedUnit].cunning}`;
+    unit1Up.style.display = "grid";
+    unit2Up.style.display = "none";
+    unit3Up.style.display = "none";
+    unit4Up.style.display = "none";
+    unit5Up.style.display = "none";
+    unit6Up.style.display = "none";
+    unit7Up.style.display = "none";
+    unit8Up.style.display = "none";
+    unit9Up.style.display = "none";
+    unit10Up.style.display = "none";
 })
 
 let _gameScreen = document.getElementById('mainScreen');
@@ -78,8 +111,6 @@ let displayedGravitasOfUnit = document.getElementById('gravitasOfUnit');
 let displayedIntelligenceOfUnit = document.getElementById('intelligenceOfUnit');
 let displayedCunningOfUnit = document.getElementById('cunningOfUnit');
 
-let SelectedUnit;
-
 let totalGold = 0;
 
 document.querySelectorAll(".trainingBtn").forEach(trainingBtn => trainingBtn.addEventListener('mouseenter', function(){
@@ -91,6 +122,16 @@ document.querySelectorAll(".trainingBtn").forEach(trainingBtn => trainingBtn.add
     trainingBtn.style.backgroundColor = "rgb(59, 59, 235)";
     trainingBtn.style.border = "2px solid rgb(20, 20, 173)";
 }))
+
+document.querySelector(".theButton").addEventListener('mouseenter', function(){
+    document.querySelector(".theButton").style.backgroundColor = "rgb(218, 156, 218)";
+    document.querySelector(".theButton").style.border = "rgb(6, 87, 33)";
+})
+
+document.querySelector(".theButton").addEventListener('mouseleave', function(){
+    document.querySelector(".theButton").style.backgroundColor = "rgb(212, 11, 212)";
+    document.querySelector(".theButton").style.border = "2px solid rgb(126, 9, 126)";
+})
 
 let unit1Up = document.getElementById('unit1Upgrade');
 let unit2Up = document.getElementById('unit2Upgrade');

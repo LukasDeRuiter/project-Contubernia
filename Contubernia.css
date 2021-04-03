@@ -1,3 +1,7 @@
+body{
+  background-color: gray;
+}
+
 .navBar{
     background-color: blue;
     height: 25px;
@@ -44,6 +48,7 @@
     grid-column-end: 11;
     grid-row-start: 10;
     grid-row-end: 11;
+    text-align: center;
   }
   .gameDate{
     background-color: rgb(0, 113, 128);
@@ -70,6 +75,18 @@
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: 2px solid rgb(126, 9, 126);
+
+  }
+  .theButton2{
+    background-color: rgb(212, 11, 212);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    line-height: 50%;
 
   }
 
