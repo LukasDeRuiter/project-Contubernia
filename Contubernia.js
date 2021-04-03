@@ -1581,6 +1581,9 @@ _farmLandUpgrade2.addEventListener('click', function() {
 
 let tannerNum = 0;
 let blacksmithNum = 0;
+let latrineNum = 0;
+let templeNum = 0;
+
 
 document.getElementById('tannerUpgrade').addEventListener('click', function(){
     if(tannerNum >= 9){
@@ -1610,152 +1613,201 @@ document.getElementById('blacksmithUpgrade').addEventListener('click', function(
     }
 })
 
+document.getElementById('latrineUpgrade').addEventListener('click', function(){
+    if(latrineNum >= 9){
+        latrineNum += 1;
+        document.getElementById('latrine2').src = `images/buildingmap/latrines${(latrineNum - 5)}.png`;
+        document.getElementById('latrineUpgrade').remove();
+    } else if(latrineNum >= 5 && latrineNum <= 8){
+        latrineNum += 1;
+        document.getElementById('latrine2').src = `images/buildingmap/latrines${(latrineNum - 5)}.png`;
+    } else{
+        latrineNum += 1;
+        document.getElementById('latrine1').src = `images/buildingmap/latrines${latrineNum}.png`;
+    }
+})
+
+document.getElementById('templeUpgrade').addEventListener('click', function(){
+    if(templeNum >= 9){
+        templeNum += 1;
+        document.getElementById('temple2').src = `images/buildingmap/temple${(templeNum - 5)}.png`;
+        document.getElementById('templeUpgrade').remove();
+    } else if(templeNum >= 5 && templeNum <= 8){
+        templeNum += 1;
+        document.getElementById('temple2').src = `images/buildingmap/temple${(templeNum - 5)}.png`;
+    } else{
+        templeNum += 1;
+        document.getElementById('temple1').src = `images/buildingmap/temple${templeNum}.png`;
+    }
+})
+
 /* tooltips for upgrades */
 _evocatiUpgrade2.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade2.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade2.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade2.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
 })
 
 _evocatiUpgrade3.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade3.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade3.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade3.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
 })
 
 _evocatiUpgrade4.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade4.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade4.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade4.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
 })
 
 _evocatiUpgrade5.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade5.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade5.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade5.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
 })
 
 _evocatiUpgrade6.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade6.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade6.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade6.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
 })
 
 _evocatiUpgrade7.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade7.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade7.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade7.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
 })
 
 _evocatiUpgrade8.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from gravitas, but no more XP from other stats";
 })
 _eagleUpgrade8.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Eagle Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Cunning, but no more XP from other stats";
 })
 _firstUpgrade8.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to First Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Intelligence, but no more XP from other stats";
 })
 _armoredUpgrade8.addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Upgrade unit to Evocati";
+    buyInformation.innerHTML = "Upgrade unit to Armored Cohort";
     buyCosts.innerHTML = "2000 gold";
     buyBenefits.innerHTML = "5* more XP from Strength, but no more XP from other stats";
+})
+
+document.getElementById('tannerUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade camp tanneries";
+    buyCosts.innerHTML = "200 gold, 50 stone, 100 wood";
+    buyBenefits.innerHTML = "Increases income by +10 gold";
+})
+document.getElementById('blacksmithUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade camp blacksmiths";
+    buyCosts.innerHTML = "500 gold, 100 stone, 175 wood";
+    buyBenefits.innerHTML = "Increases income by +10 gold";
+})
+document.getElementById('latrineUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade camp latrines";
+    buyCosts.innerHTML = "250 gold, 50 stone, 150 wood";
+    buyBenefits.innerHTML = "Increases income by +10 gold";
+})
+document.getElementById('templeUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade camp temples";
+    buyCosts.innerHTML = "1000 gold, 250 stone, 450 wood";
+    buyBenefits.innerHTML = "Increases income by +10 gold";
 })
 
 /* next turn stuff */
