@@ -79,6 +79,8 @@ clickkie.addEventListener('click', function() {
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+
+    document.getElementById('introScreen').style.display = "none";
 })
 
 let _gameScreen = document.getElementById('mainScreen');
