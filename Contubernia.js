@@ -1641,6 +1641,12 @@ let tannerNum = 0;
 let blacksmithNum = 0;
 let latrineNum = 0;
 let templeNum = 0;
+let mintNum = 0;
+let merchantNum = 0;
+let arenaNum = 0;
+let armorStorageNum = 0;
+let workshopNum = 0;
+let academiaNum = 0;
 
 
 document.getElementById('tannerUpgrade').addEventListener('click', function(){
@@ -1696,6 +1702,91 @@ document.getElementById('templeUpgrade').addEventListener('click', function(){
     } else{
         templeNum += 1;
         document.getElementById('temple1').src = `images/buildingmap/temple${templeNum}.png`;
+    }
+})
+
+document.getElementById('mintUpgrade').addEventListener('click', function(){
+    if(mintNum >= 9){
+        mintNum += 1;
+        document.getElementById('mint2').src = `images/buildingmap/mint${(mintNum - 5)}.png`;
+        document.getElementById('mintUpgrade').remove();
+    } else if(mintNum >= 5 && mintNum <= 8){
+        mintNum += 1;
+        document.getElementById('mint2').src = `images/buildingmap/mint${(mintNum - 5)}.png`;
+    } else{
+        mintNum += 1;
+        document.getElementById('mint1').src = `images/buildingmap/mint${mintNum}.png`;
+    }
+})
+
+document.getElementById('merchantUpgrade').addEventListener('click', function(){
+    if(merchantNum >= 9){
+        merchantNum += 1;
+        document.getElementById('merchant2').src = `images/buildingmap/merchant${(merchantNum - 5)}.png`;
+        document.getElementById('merchantUpgrade').remove();
+    } else if(merchantNum >= 5 && merchantNum <= 8){
+        merchantNum += 1;
+        document.getElementById('merchant2').src = `images/buildingmap/merchant${(merchantNum - 5)}.png`;
+    } else{
+        merchantNum += 1;
+        document.getElementById('merchant1').src = `images/buildingmap/merchant${merchantNum}.png`;
+    }
+})
+
+document.getElementById('arenaUpgrade').addEventListener('click', function(){
+    if(arenaNum >= 4){
+        arenaNum += 1;
+    for(i = 1; i < 5; i++){
+        document.getElementById(`arenaLand${i}`).src = `images/buildingmap/arena${arenaNum}part${i}.png`
+        }
+    document.getElementById('arenaUpgrade').remove();
+} else{
+    arenaNum += 1;
+    for(i = 1; i < 5; i++){
+        document.getElementById(`arenaLand${i}`).src = `images/buildingmap/arena${arenaNum}part${i}.png`
+        }
+}
+})
+
+document.getElementById('workshopUpgrade').addEventListener('click', function(){
+    if(workshopNum >= 9){
+        workshopNum += 1;
+        document.getElementById('workshop2').src = `images/buildingmap/workshop${(workshopNum - 5)}.png`;
+        document.getElementById('workshopUpgrade').remove();
+    } else if(workshopNum >= 5 && workshopNum <= 8){
+        workshopNum += 1;
+        document.getElementById('workshop2').src = `images/buildingmap/workshop${(workshopNum - 5)}.png`;
+    } else{
+        workshopNum += 1;
+        document.getElementById('workshop1').src = `images/buildingmap/workshop${workshopNum}.png`;
+    }
+})
+
+document.getElementById('armorStorageUpgrade').addEventListener('click', function(){
+    if(armorStorageNum >= 9){
+        armorStorageNum += 1;
+        document.getElementById('armorStorage2').src = `images/buildingmap/armorStorage${(armorStorageNum - 5)}.png`;
+        document.getElementById('armorStorageUpgrade').remove();
+    } else if(armorStorageNum >= 5 && armorStorageNum <= 8){
+        armorStorageNum += 1;
+        document.getElementById('armorStorage2').src = `images/buildingmap/armorStorage${(armorStorageNum - 5)}.png`;
+    } else{
+        armorStorageNum += 1;
+        document.getElementById('armorStorage1').src = `images/buildingmap/armorStorage${armorStorageNum}.png`;
+    }
+})
+
+document.getElementById('academiaUpgrade').addEventListener('click', function(){
+    if(academiaNum >= 9){
+        academiaNum += 1;
+        document.getElementById('academia2').src = `images/buildingmap/academia${(academiaNum - 5)}.png`;
+        document.getElementById('academiaUpgrade').remove();
+    } else if(academiaNum >= 5 && academiaNum <= 8){
+        academiaNum += 1;
+        document.getElementById('academia2').src = `images/buildingmap/academia${(academiaNum - 5)}.png`;
+    } else{
+        academiaNum += 1;
+        document.getElementById('academia1').src = `images/buildingmap/academia${academiaNum}.png`;
     }
 })
 
