@@ -577,12 +577,24 @@ align-items: center;
   z-index: 900;
   background-color: orange;
   width: 600px;
-  height: 400px;
+  height: 300px;
   position: absolute;
   left: 50%;
   top: 50%;
   margin-left: -300px;
-  margin-top: -200px;
+  margin-top: -150px;
+}
+
+@keyframes popupScreenFadeout {
+  0%{opacity: 1}
+  100%{opacity: 0;
+  transform: translateY(-150px);}
+}
+
+@keyframes popupScreenFadein {
+0%{opacity: 0;
+transform: translateY(150px);}
+100%{opacity: 1}
 }
 
 .popupBlock1{
@@ -599,6 +611,8 @@ align-items: center;
 .popupBlock2{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: violet;
   border: 3px solid rgb(110, 53, 110);
   margin: 0 0;
@@ -610,6 +624,9 @@ align-items: center;
 .popupImg{
   width: 60px;
   height: 60px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
 }
 
 .nameFlex{

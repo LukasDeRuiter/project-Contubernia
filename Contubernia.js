@@ -9,8 +9,12 @@ let unitNames = ["Orlandus Lucullus", "Phorcys Asina", "Petra Caudex", "Maxentiu
 
  document.getElementById('nameSubmit').addEventListener('click', function(){
      _playerName = document.getElementById('playerName').value;
-     document.getElementById('intro1').style.display = "none";
-     document.getElementById('intro2').style.display = "flex";
+     document.getElementById('introScreen').style.animation= "popupScreenFadeout 1s 1";
+     introScreen.onanimationend = function(){
+        document.getElementById('intro1').style.display = "none";
+        document.getElementById('intro2').style.display = "flex";
+        introScreen.style.animation = "popupScreenFadein 1s 1";
+     }
  })
 
 clickkie.addEventListener('click', function() {
@@ -42,6 +46,8 @@ clickkie.addEventListener('click', function() {
         document.getElementById(`unitName${i}`).innerHTML = units[i].unitName;
     }
         units[1].unitClass = "Decanus";
+        units[1].unitName = `${document.getElementById('playerName').value}`;
+        document.getElementById('unitName1').innerHTML = units[1].unitName;
         units[9].unitClass = "Auxilia";
         units[9].foodCreate = 7;
         units[10].unitClass = "Auxilia";
@@ -86,7 +92,10 @@ clickkie.addEventListener('click', function() {
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
 
-    document.getElementById('introScreen').style.display = "none";
+    document.getElementById('introScreen').style.animation= "popupScreenFadeout 1s 1";
+    introScreen.onanimationend = function(){
+        document.getElementById('introScreen').style.display = "none";
+    }
 })
 
 let _gameScreen = document.getElementById('mainScreen');
