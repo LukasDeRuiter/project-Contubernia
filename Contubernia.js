@@ -2,10 +2,16 @@ let clickkie = document.getElementById('generateUnits');
 let SelectedUnit;
 
 let _currentFood = document.getElementById('currentFood');
+let _playerName;
 let units = [];
 let unitNames = ["Orlandus Lucullus", "Phorcys Asina", "Petra Caudex", "Maxentius Scapula", "Ocyrhoe Publicola", "Stamatius Pictor", "Pholus Damasippus",
  "Draco Cento", "Zoroastres Vibulanus", "Agapetus Hadrianus", "Eulalius Glycias", "Deus Nerva", "Artemisius Macer", "Remigius Merenda", "Maxentius Vergilianus"];
 
+ document.getElementById('nameSubmit').addEventListener('click', function(){
+     _playerName = document.getElementById('playerName').value;
+     document.getElementById('intro1').style.display = "none";
+     document.getElementById('intro2').style.display = "flex";
+ })
 
 clickkie.addEventListener('click', function() {
     for(let i = 1; i < 11; i++){
