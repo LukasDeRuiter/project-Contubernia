@@ -2041,6 +2041,10 @@ let actualFoodChanged = 0;
 let plusOrMinus;
 let oldDignitas = 0;
 let changedDignitas = 0;
+let currentStone = 0;
+let currentWood = 0;
+let woodChangeperTurn = 5;
+let stoneChangeperTurn = 5;
 
 buttonForNextTurn.addEventListener('click', function(){
 
@@ -2112,11 +2116,13 @@ buttonForNextTurn.addEventListener('click', function(){
 
     changedDignitas = (dignitas - oldDignitas);
     _goldChange.innerHTML = `+${units[1].goldPerTurn} gold!`
+    _woodChange.innerHTML = `+${woodChangeperTurn} wood!`
+    _stoneChange.innerHTML = `+${stoneChangeperTurn} stone!`
     _foodChange.innerHTML = `${plusOrMinus} ${actualFoodChanged} food!`
     _dignitasChange.innerHTML = `+ ${changedDignitas} more dignitas!`
     displayResourceChange(_goldChange, 0);
-    displayResourceChange(_stoneChange, 2000);
-    displayResourceChange(_woodChange, 4000);
+    displayResourceChange(_woodChange, 2000);
+    displayResourceChange(_stoneChange, 4000);
     displayResourceChange(_foodChange, 6000);
     displayResourceChange(_dignitasChange, 8000);
 
@@ -2127,6 +2133,11 @@ buttonForNextTurn.addEventListener('click', function(){
     displayUnitLevelInHouse(6, 2);
     displayUnitLevelInHouse(7, 3);
     displayUnitLevelInHouse(8, 5);
+
+    currentWood += woodChangeperTurn;
+    currentStone += stoneChangeperTurn;
+    document.getElementById('currentWood').innerHTML = `<img src="images/woodIcon.png" class="resourceImg">:  ${currentWood}`;
+    document.getElementById('currentStone').innerHTML = `<img src="images/stoneIcon.png" class="resourceImg">:  ${currentStone}`;
 
     /* If next turn is clicked, this will set the next month and year */
     if(currentMonth <= 10){
