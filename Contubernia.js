@@ -231,6 +231,10 @@ unitCard2.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 
 unitCard3.addEventListener('click', function(){
@@ -267,6 +271,10 @@ unitCard3.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 unitCard4.addEventListener('click', function(){
     selectedUnit = 4;
@@ -302,6 +310,10 @@ unitCard4.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 unitCard5.addEventListener('click', function(){
     selectedUnit = 5;
@@ -337,6 +349,10 @@ unitCard5.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 unitCard6.addEventListener('click', function(){
     selectedUnit = 6;
@@ -372,6 +388,10 @@ unitCard6.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 unitCard7.addEventListener('click', function(){
     selectedUnit = 7;
@@ -407,6 +427,10 @@ unitCard7.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 unitCard8.addEventListener('click', function(){
     selectedUnit = 8;
@@ -442,6 +466,10 @@ unitCard8.addEventListener('click', function(){
     unit8Up.style.display = "grid";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
+    unitSound.play();
 })
 unitCard9.addEventListener('click', function(){
     selectedUnit = 9;
@@ -528,10 +556,19 @@ trainingOfUnit10 = document.getElementById('unit10Action');
 
 /* Stuff for the left-side buttons/training/upgrades */
 
+let legionaryTrainSound = new Audio();
+
+function legionaryTrainingSound () {
+    let soundPicker = Math.floor(Math.random() * 2) + 1;
+    legionaryTrainSound.src = `soundfiles/units/legionary/legionaryAction${soundPicker}.mp3`;
+    legionaryTrainSound.play();
+}
+
 /* Marching */
 const _marchTraining = document.getElementById('trainingBtnMarch');
 _marchTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 50){
+
         units[selectedUnit].strength += 2;
         units[selectedUnit].energyPoints -= 50;
         displayedStrengthOfUnit.innerHTML = `Strength: ${units[selectedUnit].strength}`;
@@ -543,24 +580,31 @@ _marchTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();;
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -587,24 +631,31 @@ _informTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -631,24 +682,31 @@ _patronizeTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -675,24 +733,31 @@ _philosophyTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -721,24 +786,31 @@ _athleticsTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -767,24 +839,31 @@ _prowessTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -813,24 +892,31 @@ _constructingTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -859,24 +945,31 @@ _plottingTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -905,24 +998,31 @@ _theologizeTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -951,24 +1051,31 @@ _meditationTraining.addEventListener('click', function(){
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 3:
                 trainingOfUnit3.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 4:
                 trainingOfUnit4.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 5:
                 trainingOfUnit5.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 6:
                 trainingOfUnit6.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 7:
                 trainingOfUnit7.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 8:
                 trainingOfUnit8.src = "images/marchGIF.gif";
+                legionaryTrainingSound();
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
@@ -2045,11 +2152,14 @@ let currentStone = 0;
 let currentWood = 0;
 let woodChangeperTurn = 5;
 let stoneChangeperTurn = 5;
+let nextTurnSound = new Audio();
+nextTurnSound.src = 'soundfiles/otherSounds/nextTurn.mp3';
 
 buttonForNextTurn.addEventListener('click', function(){
 
     /* Happens every turn */
     currentGameTurn += 1;
+    nextTurnSound.play();
     _gameTurn.innerHTML = `Turn: ${currentGameTurn}`;
     _gameScreen.style.animation = "nextTurn 1s 1";
     _gameScreen.onanimationend = function (){
