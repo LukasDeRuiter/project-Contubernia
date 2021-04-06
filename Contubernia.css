@@ -25,6 +25,7 @@ body{
     border: 6px solid black;
     border-radius: 10px;
     opacity: 1;
+    filter: brightness(50%);
   }
   @keyframes nextTurn{
     0% {opacity: 1}

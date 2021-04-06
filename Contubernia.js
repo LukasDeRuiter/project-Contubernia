@@ -96,6 +96,7 @@ clickkie.addEventListener('click', function() {
     introScreen.onanimationend = function(){
         document.getElementById('introScreen').style.display = "none";
     }
+    document.getElementById('mainScreen').style.filter = "brightness(100%)";
 })
 
 let _gameScreen = document.getElementById('mainScreen');
@@ -161,6 +162,8 @@ let unit8Up = document.getElementById('unit8Upgrade');
 let unit9Up = document.getElementById('unit9Upgrade');
 let unit10Up = document.getElementById('unit10Upgrade');
 
+let decanusSpecialQuote = 0;
+
 unitCard1.addEventListener('click', function(){
     selectedUnit = 1;
     unitCard1.style.backgroundColor = "red";
@@ -195,6 +198,19 @@ unitCard1.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    decanusSpecialQuote += 1;
+    let unitSound = new Audio();
+    if(decanusSpecialQuote === 8){
+        /* Just a little easter egg from my side ;) -- Lukas */
+        unitSound.src = `soundfiles/units/decanus/decanus${decanusSpecialQuote}.mp3`;
+        unitSound.play();
+        decanusSpecialQuote = 0;
+    }
+    else{
+        unitSound.src = `soundfiles/units/decanus/decanus${soundPicker}.mp3`;
+        unitSound.play();
+    }
 })
 
 unitCard2.addEventListener('click', function(){
@@ -235,6 +251,7 @@ unitCard2.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 
 unitCard3.addEventListener('click', function(){
@@ -275,6 +292,7 @@ unitCard3.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 unitCard4.addEventListener('click', function(){
     selectedUnit = 4;
@@ -314,6 +332,7 @@ unitCard4.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 unitCard5.addEventListener('click', function(){
     selectedUnit = 5;
@@ -353,6 +372,7 @@ unitCard5.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 unitCard6.addEventListener('click', function(){
     selectedUnit = 6;
@@ -392,6 +412,7 @@ unitCard6.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 unitCard7.addEventListener('click', function(){
     selectedUnit = 7;
@@ -431,6 +452,7 @@ unitCard7.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 unitCard8.addEventListener('click', function(){
     selectedUnit = 8;
@@ -470,6 +492,7 @@ unitCard8.addEventListener('click', function(){
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
     unitSound.play();
+    decanusSpecialQuote = 0;
 })
 unitCard9.addEventListener('click', function(){
     selectedUnit = 9;
@@ -505,6 +528,7 @@ unitCard9.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "grid";
     unit10Up.style.display = "none";
+    decanusSpecialQuote = 0;
 })
 unitCard10.addEventListener('click', function(){
     selectedUnit = 10;
@@ -540,6 +564,7 @@ unitCard10.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "grid";
+    decanusSpecialQuote = 0;
 })
 
 /* Unit training set in their unitcard */
@@ -557,11 +582,18 @@ trainingOfUnit10 = document.getElementById('unit10Action');
 /* Stuff for the left-side buttons/training/upgrades */
 
 let legionaryTrainSound = new Audio();
+let decanusTrainSound = new Audio();
 
 function legionaryTrainingSound () {
     let soundPicker = Math.floor(Math.random() * 2) + 1;
     legionaryTrainSound.src = `soundfiles/units/legionary/legionaryAction${soundPicker}.mp3`;
     legionaryTrainSound.play();
+}
+
+function decanusTrainingSound () {
+    let soundPicker = Math.floor(Math.random() * 2) + 1;
+    decanusTrainSound.src = `soundfiles/units/decanus/decanusAction${soundPicker}.mp3`;
+    decanusTrainSound.play();
 }
 
 /* Marching */
@@ -577,6 +609,7 @@ _marchTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -628,6 +661,7 @@ _informTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -679,6 +713,7 @@ _patronizeTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -730,6 +765,7 @@ _philosophyTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -783,6 +819,7 @@ _athleticsTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -836,6 +873,7 @@ _prowessTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -889,6 +927,7 @@ _constructingTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -942,6 +981,7 @@ _plottingTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -995,6 +1035,7 @@ _theologizeTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
@@ -1048,6 +1089,7 @@ _meditationTraining.addEventListener('click', function(){
         switch(selectedUnit){
             case 1:
                 trainingOfUnit1.src = "images/marchGIF.gif";
+                decanusTrainingSound();
                 break;
             case 2:
                 trainingOfUnit2.src = "images/marchGIF.gif";
