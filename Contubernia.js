@@ -1897,6 +1897,67 @@ document.getElementById('academiaUpgrade').addEventListener('click', function(){
     }
 })
 
+let forester1Num = 0;
+let forester2Num = 0;
+let miner1Num = 0;
+let miner2Num = 0;
+
+document.getElementById('foresterUpgrade1').addEventListener('click', function(){
+    if(forester1Num >= 9){
+        forester1Num += 1;
+        document.getElementById('forester2').src = `images/buildingmap/forester${(forester1Num - 5)}.png`;
+        document.getElementById('foresterUpgrade1').remove();
+    } else if(forester1Num >= 5 && forester1Num <= 8){
+        forester1Num += 1;
+        document.getElementById('forester2').src = `images/buildingmap/forester${(forester1Num - 5)}.png`;
+    } else{
+        forester1Num += 1;
+        document.getElementById('forester1').src = `images/buildingmap/forester${forester1Num}.png`;
+    }
+})
+
+document.getElementById('foresterUpgrade2').addEventListener('click', function(){
+    if(forester2Num >= 9){
+        forester2Num += 1;
+        document.getElementById('forester4').src = `images/buildingmap/forester${(forester2Num - 5)}.png`;
+        document.getElementById('foresterUpgrade2').remove();
+    } else if(forester2Num >= 5 && forester2Num <= 8){
+        forester2Num += 1;
+        document.getElementById('forester4').src = `images/buildingmap/forester${(forester2Num - 5)}.png`;
+    } else{
+        forester2Num += 1;
+        document.getElementById('forester3').src = `images/buildingmap/forester${forester2Num}.png`;
+    }
+})
+
+document.getElementById('minerUpgrade1').addEventListener('click', function(){
+    if(miner1Num >= 9){
+        miner1Num += 1;
+        document.getElementById('miner2').src = `images/buildingmap/miner${(miner1Num - 5)}.png`;
+        document.getElementById('minerUpgrade1').remove();
+    } else if(miner1Num >= 5 && miner1Num <= 8){
+        miner1Num += 1;
+        document.getElementById('miner2').src = `images/buildingmap/miner${(miner1Num - 5)}.png`;
+    } else{
+        miner1Num += 1;
+        document.getElementById('miner1').src = `images/buildingmap/miner${miner1Num}.png`;
+    }
+})
+
+document.getElementById('minerUpgrade2').addEventListener('click', function(){
+    if(miner2Num >= 9){
+        miner2Num += 1;
+        document.getElementById('miner4').src = `images/buildingmap/miner${(miner2Num - 5)}.png`;
+        document.getElementById('minerUpgrade2').remove();
+    } else if(miner2Num >= 5 && miner2Num <= 8){
+        miner2Num += 1;
+        document.getElementById('miner4').src = `images/buildingmap/miner${(miner2Num - 5)}.png`;
+    } else{
+        miner2Num += 1;
+        document.getElementById('miner3').src = `images/buildingmap/miner${miner2Num}.png`;
+    }
+})
+
 /* tooltips for upgrades */
 _evocatiUpgrade2.addEventListener('mouseenter', function(){
     buyInformation.innerHTML = "Upgrade unit to Evocati Cohort";
