@@ -528,6 +528,10 @@ unitCard9.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "grid";
     unit10Up.style.display = "none";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/auxilia/auxilia${soundPicker}.mp3`;
+    unitSound.play();
     decanusSpecialQuote = 0;
 })
 unitCard10.addEventListener('click', function(){
@@ -564,6 +568,10 @@ unitCard10.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "grid";
+    let soundPicker = Math.floor(Math.random() * 7) + 1;
+    let unitSound = new Audio();
+    unitSound.src = `soundfiles/units/auxilia/auxilia${soundPicker}.mp3`;
+    unitSound.play();
     decanusSpecialQuote = 0;
 })
 
@@ -583,6 +591,7 @@ trainingOfUnit10 = document.getElementById('unit10Action');
 
 let legionaryTrainSound = new Audio();
 let decanusTrainSound = new Audio();
+let auxiliaTrainSound = new Audio();
 
 function legionaryTrainingSound () {
     let soundPicker = Math.floor(Math.random() * 2) + 1;
@@ -596,12 +605,21 @@ function decanusTrainingSound () {
     decanusTrainSound.play();
 }
 
+function auxiliaTrainingSound () {
+    let soundPicker = Math.floor(Math.random() * 2) + 1;
+    auxiliaTrainSound.src = `soundfiles/units/auxilia/auxiliaAction${soundPicker}.mp3`;
+    auxiliaTrainSound.play();
+}
+
 /* Marching */
 const _marchTraining = document.getElementById('trainingBtnMarch');
 _marchTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 50){
-
         units[selectedUnit].strength += 2;
+        document.getElementById('strengthInfoBox').style.animation = "statsGoUp 1.5s 1";
+        strengthInfoBox.onanimationend = function(){
+            strengthInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 50;
         displayedStrengthOfUnit.innerHTML = `Strength: ${units[selectedUnit].strength}`;
         displayedEnergyOfUnit.innerHTML = `Energy: ${units[selectedUnit].energyPoints} / ${units[selectedUnit].maxEnergyPoints}`;
@@ -641,9 +659,11 @@ _marchTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -654,6 +674,10 @@ const _informTraining = document.getElementById('trainingBtnInform');
 _informTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 50){
         units[selectedUnit].cunning += 2;
+        document.getElementById('cunningInfoBox').style.animation = "statsGoUp 1.5s 1";
+        cunningInfoBox.onanimationend = function(){
+            cunningInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 50;
         displayedCunningOfUnit.innerHTML = `Cunning: ${units[selectedUnit].cunning}`;
         displayedEnergyOfUnit.innerHTML = `Energy: ${units[selectedUnit].energyPoints} / ${units[selectedUnit].maxEnergyPoints}`;
@@ -693,9 +717,11 @@ _informTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -706,6 +732,10 @@ const _patronizeTraining = document.getElementById('trainingBtnPatronize');
 _patronizeTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 50){
         units[selectedUnit].gravitas += 2;
+        document.getElementById('gravitasInfoBox').style.animation = "statsGoUp 1.5s 1";
+        gravitasInfoBox.onanimationend = function(){
+            gravitasInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 50;
         displayedGravitasOfUnit.innerHTML = `Gravitas: ${units[selectedUnit].gravitas}`;
         displayedEnergyOfUnit.innerHTML = `Energy: ${units[selectedUnit].energyPoints} / ${units[selectedUnit].maxEnergyPoints}`;
@@ -745,9 +775,11 @@ _patronizeTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -758,6 +790,10 @@ const _philosophyTraining = document.getElementById('trainingBtnPhilosophy');
 _philosophyTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 50){
         units[selectedUnit].intelligence += 2;
+        document.getElementById('intelligenceInfoBox').style.animation = "statsGoUp 1.5s 1";
+        intelligenceInfoBox.onanimationend = function(){
+            intelligenceInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 50;
         displayedIntelligenceOfUnit.innerHTML = `Intelligence: ${units[selectedUnit].intelligence}`;
         displayedEnergyOfUnit.innerHTML = `Energy: ${units[selectedUnit].energyPoints} / ${units[selectedUnit].maxEnergyPoints}`;
@@ -797,9 +833,11 @@ _philosophyTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -811,6 +849,14 @@ _athleticsTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 75){
         units[selectedUnit].strength += 1;
         units[selectedUnit].cunning += 1;
+        document.getElementById('cunningInfoBox').style.animation = "statsGoUp 1.5s 1";
+        cunningInfoBox.onanimationend = function(){
+            cunningInfoBox.style.animation = "endAnimation 1s 1";
+        }
+   document.getElementById('strengthInfoBox').style.animation = "statsGoUp 1.5s 1";
+        strengthInfoBox.onanimationend = function(){
+            strengthInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 75;
         displayedStrengthOfUnit.innerHTML = `Strength: ${units[selectedUnit].strength}`;
         displayedCunningOfUnit.innerHTML = `Cunning: ${units[selectedUnit].cunning}`;
@@ -851,9 +897,11 @@ _athleticsTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -865,6 +913,14 @@ _prowessTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 75){
         units[selectedUnit].gravitas += 1;
         units[selectedUnit].cunning += 1;
+        document.getElementById('gravitasInfoBox').style.animation = "statsGoUp 1.5s 1";
+        gravitasInfoBox.onanimationend = function(){
+            gravitasInfoBox.style.animation = "endAnimation 1s 1";
+        }
+     document.getElementById('cunningInfoBox').style.animation = "statsGoUp 1.5s 1";
+        cunningInfoBox.onanimationend = function(){
+            cunningInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 75;
         displayedGravitasOfUnit.innerHTML = `Gravitas: ${units[selectedUnit].gravitas}`;
         displayedCunningOfUnit.innerHTML = `Cunning: ${units[selectedUnit].cunning}`;
@@ -905,9 +961,11 @@ _prowessTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -919,6 +977,14 @@ _constructingTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 75){
         units[selectedUnit].strength += 1;
         units[selectedUnit].intelligence += 1;
+        document.getElementById('strengthInfoBox').style.animation = "statsGoUp 1.5s 1";
+        strengthInfoBox.onanimationend = function(){
+            strengthInfoBox.style.animation = "endAnimation 1s 1";
+        }
+        document.getElementById('intelligenceInfoBox').style.animation = "statsGoUp 1.5s 1";
+        intelligenceInfoBox.onanimationend = function(){
+            intelligenceInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 75;
         displayedStrengthOfUnit.innerHTML = `Strength: ${units[selectedUnit].strength}`;
         displayedIntelligenceOfUnit.innerHTML = `Intelligence: ${units[selectedUnit].intelligence}`;
@@ -959,9 +1025,11 @@ _constructingTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -973,6 +1041,14 @@ _plottingTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 75){
         units[selectedUnit].intelligence += 1;
         units[selectedUnit].cunning += 1;
+        document.getElementById('cunningInfoBox').style.animation = "statsGoUp 1.5s 1";
+        cunningInfoBox.onanimationend = function(){
+            cunningInfoBox.style.animation = "endAnimation 1s 1";
+        }
+        document.getElementById('intelligenceInfoBox').style.animation = "statsGoUp 1.5s 1";
+        intelligenceInfoBox.onanimationend = function(){
+            intelligenceInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 75;
         displayedIntelligenceOfUnit.innerHTML = `Intelligence: ${units[selectedUnit].intelligence}`;
         displayedCunningOfUnit.innerHTML = `Cunning: ${units[selectedUnit].cunning}`;
@@ -1013,9 +1089,11 @@ _plottingTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -1027,6 +1105,14 @@ _theologizeTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 75){
         units[selectedUnit].intelligence += 1;
         units[selectedUnit].gravitas += 1;
+        document.getElementById('intelligenceInfoBox').style.animation = "statsGoUp 1.5s 1";
+        intelligenceInfoBox.onanimationend = function(){
+            intelligenceInfoBox.style.animation = "endAnimation 1s 1";
+        }
+    document.getElementById('gravitasInfoBox').style.animation = "statsGoUp 1.5s 1";
+        gravitasInfoBox.onanimationend = function(){
+            gravitasInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 75;
         displayedIntelligenceOfUnit.innerHTML = `Intelligence: ${units[selectedUnit].intelligence}`;
         displayedGravitasOfUnit.innerHTML = `Gravitas: ${units[selectedUnit].gravitas}`;
@@ -1067,9 +1153,11 @@ _theologizeTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }
@@ -1081,6 +1169,14 @@ _meditationTraining.addEventListener('click', function(){
     if(units[selectedUnit].energyPoints >= 75){
         units[selectedUnit].strength += 1;
         units[selectedUnit].gravitas += 1;
+        document.getElementById('gravitasInfoBox').style.animation = "statsGoUp 1.5s 1";
+        gravitasInfoBox.onanimationend = function(){
+            gravitasInfoBox.style.animation = "endAnimation 1s 1";
+        }
+   document.getElementById('strengthInfoBox').style.animation = "statsGoUp 1.5s 1";
+        strengthInfoBox.onanimationend = function(){
+            strengthInfoBox.style.animation = "endAnimation 1s 1";
+        }
         units[selectedUnit].energyPoints -= 75;
         displayedStrengthOfUnit.innerHTML = `Strength: ${units[selectedUnit].strength}`;
         displayedGravitasOfUnit.innerHTML = `Dignitas: ${units[selectedUnit].gravitas}`;
@@ -1121,9 +1217,11 @@ _meditationTraining.addEventListener('click', function(){
                 break;
             case 9:
                 trainingOfUnit9.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
             case 10:
                 trainingOfUnit10.src = "images/marchGIF.gif";
+                auxiliaTrainingSound();
                 break;
 
         }

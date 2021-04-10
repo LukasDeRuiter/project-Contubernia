@@ -340,6 +340,37 @@ align-items: center;
   text-align: left;
 }
 
+.strength{
+  background-color: rgb(19, 163, 19);
+  border: 3px solid rgb(12, 97, 12);
+}
+
+.cunning{
+  background-color: rgba(204, 104, 10, 0.5);
+  border: 3px solid rgb(134, 69, 8);
+}
+
+.intelligence{
+  background-color: rgba(16, 91, 204, 0.5);
+  border: 3px solid rgb(10, 54, 121);
+}
+
+.gravitas{
+  background-color: rgba(163, 24, 190, 0.5);
+  border: 3px solid rgb(87, 14, 102);
+}
+
+@keyframes statsGoUp{
+  0% {filter: hue-rotate(0deg)}
+  50% {filter: hue-rotate(360deg)}
+  100% {filter: hue-rotate(0deg)}
+}
+
+@keyframes endAnimation{
+  0% {filter: hue-rotate(0deg)}
+  100% {filter: hue-rotate(0deg)}
+}
+
 .xpbar1{
   background-color: #63899C;
   height: 10px;
