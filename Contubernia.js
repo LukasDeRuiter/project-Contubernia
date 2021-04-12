@@ -51,8 +51,8 @@ clickkie.addEventListener('click', function() {
         units[9].unitClass = "Auxilia";
         units[9].foodCreate = 7;
         units[10].unitClass = "Auxilia";
-        units[10].foodCreate = 7;
-        units[1].goldPerTurn = 10;
+        units[10].foodCreate = 70;
+        units[1].goldPerTurn = 100;
         totalFoodUse = units[1].foodUse + units[2].foodUse + units[3].foodUse + units[4].foodUse + units[5].foodUse + units[6].foodUse + units[7].foodUse + units[8].foodUse + units[9].foodUse + units[10].foodUse;
         totalFoodCreate = units[9].foodCreate + units[10].foodCreate;
         totalFood += totalFoodCreate;
@@ -91,6 +91,7 @@ clickkie.addEventListener('click', function() {
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "grid";
 
     document.getElementById('introScreen').style.animation= "popupScreenFadeout 1s 1";
     introScreen.onanimationend = function(){
@@ -162,6 +163,7 @@ let unit8Up = document.getElementById('unit8Upgrade');
 let unit9Up = document.getElementById('unit9Upgrade');
 let unit10Up = document.getElementById('unit10Upgrade');
 
+let decanusExchangeResourceContainer = document. getElementById('unit1PurchaseResources');
 let decanusSpecialQuote = 0;
 
 unitCard1.addEventListener('click', function(){
@@ -198,6 +200,7 @@ unitCard1.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "grid";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     decanusSpecialQuote += 1;
     let unitSound = new Audio();
@@ -247,6 +250,7 @@ unitCard2.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -288,6 +292,7 @@ unitCard3.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -328,6 +333,7 @@ unitCard4.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -368,6 +374,7 @@ unitCard5.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -408,6 +415,7 @@ unitCard6.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -448,6 +456,7 @@ unitCard7.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -488,6 +497,7 @@ unitCard8.addEventListener('click', function(){
     unit8Up.style.display = "grid";
     unit9Up.style.display = "none";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/legionary/legionary${soundPicker}.mp3`;
@@ -528,6 +538,7 @@ unitCard9.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "grid";
     unit10Up.style.display = "none";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/auxilia/auxilia${soundPicker}.mp3`;
@@ -568,6 +579,7 @@ unitCard10.addEventListener('click', function(){
     unit8Up.style.display = "none";
     unit9Up.style.display = "none";
     unit10Up.style.display = "grid";
+    decanusExchangeResourceContainer.style.display = "none";
     let soundPicker = Math.floor(Math.random() * 7) + 1;
     let unitSound = new Audio();
     unitSound.src = `soundfiles/units/auxilia/auxilia${soundPicker}.mp3`;
@@ -1284,6 +1296,86 @@ _meditationTraining.addEventListener('mouseenter', function(){
     buyBenefits.innerHTML = "+1 strength / +1 Gravitas";
 })
 
+/* Decanus exchanging resources */
+
+function exchangeResource(){
+        document.getElementById('currentWood').innerHTML = `<img src="images/woodIcon.png" class="resourceImg">:  ${currentWood}`;
+        document.getElementById('currentStone').innerHTML = `<img src="images/stoneIcon.png" class="resourceImg">:  ${currentStone}`;
+        _currentFood.innerHTML = `<img src="images/food.png" class="resourceImg">:  ${totalFood}/${totalFoodUse}`;
+        _currentSestertius.innerHTML = `<img src="images/sestertius.png" class="resourceImg">:  ${totalGold}`;
+    }
+
+document.getElementById('purchaseWood').addEventListener('click', function(){
+    if(totalGold >= 100){
+        totalGold -= 100;
+        currentWood += 50;
+    exchangeResource();
+}})
+document.getElementById('purchaseWood').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Purchase wood";
+    buyCosts.innerHTML = "100 Sestertius";
+    buyBenefits.innerHTML = "50 wood";
+})
+
+document.getElementById('purchaseStone').addEventListener('click', function(){
+    if(totalGold >= 100){
+        totalGold -= 100;
+        currentStone += 50;
+    exchangeResource();
+}})
+document.getElementById('purchaseStone').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Purchase stone";
+    buyCosts.innerHTML = "100 Sestertius";
+    buyBenefits.innerHTML = "50 stone";
+})
+
+document.getElementById('purchaseFood').addEventListener('click', function(){
+    if(totalGold >= 100){
+        totalGold -= 100;
+        totalFood += 50;
+    exchangeResource();
+}})
+document.getElementById('purchaseFood').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Purchase food";
+    buyCosts.innerHTML = "100 Sestertius";
+    buyBenefits.innerHTML = "50 food";
+})
+
+document.getElementById('sellWood').addEventListener('click', function(){
+    if(currentWood >= 100){
+        currentWood -= 100;
+        totalGold += 50;
+    exchangeResource();
+}})
+document.getElementById('sellWood').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Sell wood";
+    buyCosts.innerHTML = "100 wood";
+    buyBenefits.innerHTML = "50 Sestertius";
+})
+
+document.getElementById('sellStone').addEventListener('click', function(){
+    if(currentStone >= 100){
+        currentStone -= 100;
+        totalGold += 50;
+    exchangeResource();
+}})
+document.getElementById('sellStone').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Sell stone";
+    buyCosts.innerHTML = "100 stone";
+    buyBenefits.innerHTML = "50 Sestertius";
+})
+
+document.getElementById('sellFood').addEventListener('click', function(){
+    if(totalFood >= 100){
+        totalFood -= 100;
+        totalGold += 50;
+    exchangeResource();
+}})
+document.getElementById('sellFood').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Sell food";
+    buyCosts.innerHTML = "100 food";
+    buyBenefits.innerHTML = "50 Sestertius";
+})
 
 /*upgrades*/
 let unit2GIF = document.getElementById('unit2Img');
@@ -2351,8 +2443,8 @@ let oldDignitas = 0;
 let changedDignitas = 0;
 let currentStone = 0;
 let currentWood = 0;
-let woodChangeperTurn = 5;
-let stoneChangeperTurn = 5;
+let woodChangeperTurn = 50;
+let stoneChangeperTurn = 50;
 let nextTurnSound = new Audio();
 nextTurnSound.src = 'soundfiles/otherSounds/nextTurn.mp3';
 
