@@ -51,8 +51,8 @@ clickkie.addEventListener('click', function() {
         units[9].unitClass = "Auxilia";
         units[9].foodCreate = 7;
         units[10].unitClass = "Auxilia";
-        units[10].foodCreate = 70;
-        units[1].goldPerTurn = 100;
+        units[10].foodCreate = 7;
+        units[1].goldPerTurn = 10;
         totalFoodUse = units[1].foodUse + units[2].foodUse + units[3].foodUse + units[4].foodUse + units[5].foodUse + units[6].foodUse + units[7].foodUse + units[8].foodUse + units[9].foodUse + units[10].foodUse;
         totalFoodCreate = units[9].foodCreate + units[10].foodCreate;
         totalFood += totalFoodCreate;
@@ -1987,147 +1987,221 @@ let armorStorageNum = 0;
 let workshopNum = 0;
 let academiaNum = 0;
 
+function removeCostsforGoldBuildings(costInWood, costInStone) {
+    currentWood -= costInWood;
+    currentStone -= costInStone;
+    document.getElementById('currentWood').innerHTML = `<img src="images/woodIcon.png" class="resourceImg">:  ${currentWood}`;
+    document.getElementById('currentStone').innerHTML = `<img src="images/stoneIcon.png" class="resourceImg">:  ${currentStone}`;
+}
 
 document.getElementById('tannerUpgrade').addEventListener('click', function(){
-    if(tannerNum >= 9){
+    if(currentStone >= 50 && currentWood >= 50){
+        if(tannerNum >= 9){
         tannerNum += 1;
         document.getElementById('tanner2').src = `images/buildingmap/tanner${(tannerNum - 5)}.png`;
+        units[1].goldPerTurn += 2;
+        removeCostsforGoldBuildings(50, 50);
         document.getElementById('tannerUpgrade').remove();
     } else if(tannerNum >= 5 && tannerNum <= 8){
         tannerNum += 1;
         document.getElementById('tanner2').src = `images/buildingmap/tanner${(tannerNum - 5)}.png`;
+        units[1].goldPerTurn += 2;
+        removeCostsforGoldBuildings(50, 50);
     } else{
         tannerNum += 1;
         document.getElementById('tanner1').src = `images/buildingmap/tanner${tannerNum}.png`;
+        units[1].goldPerTurn += 2;
+        removeCostsforGoldBuildings(50, 50);
     }
-})
+}})
 
 document.getElementById('blacksmithUpgrade').addEventListener('click', function(){
+    if(currentStone >= 50 && currentWood >= 50){
     if(blacksmithNum >= 9){
         blacksmithNum += 1;
         document.getElementById('blacksmith2').src = `images/buildingmap/blacksmith${(blacksmithNum - 5)}.png`;
+        units[1].goldPerTurn += 2;
+        removeCostsforGoldBuildings(50, 50);
         document.getElementById('blacksmithUpgrade').remove();
     } else if(blacksmithNum >= 5 && blacksmithNum <= 8){
         blacksmithNum += 1;
         document.getElementById('blacksmith2').src = `images/buildingmap/blacksmith${(blacksmithNum - 5)}.png`;
+        units[1].goldPerTurn += 2;
+        removeCostsforGoldBuildings(50, 50);
     } else{
         blacksmithNum += 1;
         document.getElementById('blacksmith1').src = `images/buildingmap/blacksmith${blacksmithNum}.png`;
+        units[1].goldPerTurn += 2;
+        removeCostsforGoldBuildings(50, 50);
     }
-})
+}})
 
 document.getElementById('latrineUpgrade').addEventListener('click', function(){
+    if(currentStone >= 150 && currentWood >= 150){
     if(latrineNum >= 9){
         latrineNum += 1;
         document.getElementById('latrine2').src = `images/buildingmap/latrines${(latrineNum - 5)}.png`;
+        units[1].goldPerTurn += 3;
+        removeCostsforGoldBuildings(150, 150);
         document.getElementById('latrineUpgrade').remove();
     } else if(latrineNum >= 5 && latrineNum <= 8){
         latrineNum += 1;
         document.getElementById('latrine2').src = `images/buildingmap/latrines${(latrineNum - 5)}.png`;
+        units[1].goldPerTurn += 3;
+        removeCostsforGoldBuildings(150, 150);
     } else{
         latrineNum += 1;
         document.getElementById('latrine1').src = `images/buildingmap/latrines${latrineNum}.png`;
+        units[1].goldPerTurn += 3;
+        removeCostsforGoldBuildings(150, 150);
     }
-})
+}})
 
 document.getElementById('templeUpgrade').addEventListener('click', function(){
+    if(currentStone >= 350 && currentWood >= 500){
     if(templeNum >= 9){
         templeNum += 1;
         document.getElementById('temple2').src = `images/buildingmap/temple${(templeNum - 5)}.png`;
+        units[1].goldPerTurn += 7;
+        removeCostsforGoldBuildings(500, 350);
         document.getElementById('templeUpgrade').remove();
     } else if(templeNum >= 5 && templeNum <= 8){
         templeNum += 1;
         document.getElementById('temple2').src = `images/buildingmap/temple${(templeNum - 5)}.png`;
+        units[1].goldPerTurn += 7;
+        removeCostsforGoldBuildings(500, 350);
     } else{
         templeNum += 1;
         document.getElementById('temple1').src = `images/buildingmap/temple${templeNum}.png`;
+        units[1].goldPerTurn += 7;
+        removeCostsforGoldBuildings(500, 350);
     }
-})
+}})
 
 document.getElementById('mintUpgrade').addEventListener('click', function(){
+    if(currentStone >= 600 && currentWood >= 750){
     if(mintNum >= 9){
         mintNum += 1;
         document.getElementById('mint2').src = `images/buildingmap/mint${(mintNum - 5)}.png`;
+        units[1].goldPerTurn += 10;
+        removeCostsforGoldBuildings(750, 600);
         document.getElementById('mintUpgrade').remove();
     } else if(mintNum >= 5 && mintNum <= 8){
         mintNum += 1;
         document.getElementById('mint2').src = `images/buildingmap/mint${(mintNum - 5)}.png`;
+        units[1].goldPerTurn += 10;
+        removeCostsforGoldBuildings(750, 600);
     } else{
         mintNum += 1;
         document.getElementById('mint1').src = `images/buildingmap/mint${mintNum}.png`;
+        units[1].goldPerTurn += 10;
+        removeCostsforGoldBuildings(750, 600);
     }
-})
+}})
 
 document.getElementById('merchantUpgrade').addEventListener('click', function(){
+    if(currentStone >= 800 && currentWood >= 950){
     if(merchantNum >= 9){
         merchantNum += 1;
         document.getElementById('merchant2').src = `images/buildingmap/merchant${(merchantNum - 5)}.png`;
+        units[1].goldPerTurn += 11;
+        removeCostsforGoldBuildings(950, 800);
         document.getElementById('merchantUpgrade').remove();
     } else if(merchantNum >= 5 && merchantNum <= 8){
         merchantNum += 1;
         document.getElementById('merchant2').src = `images/buildingmap/merchant${(merchantNum - 5)}.png`;
+        units[1].goldPerTurn += 11;
+        removeCostsforGoldBuildings(950, 800);
     } else{
         merchantNum += 1;
         document.getElementById('merchant1').src = `images/buildingmap/merchant${merchantNum}.png`;
+        units[1].goldPerTurn += 11;
+        removeCostsforGoldBuildings(950, 800);
     }
-})
+}})
 
 document.getElementById('arenaUpgrade').addEventListener('click', function(){
+    if(currentStone >= 1500 && currentWood >= 1500){
     if(arenaNum >= 4){
         arenaNum += 1;
     for(i = 1; i < 5; i++){
         document.getElementById(`arenaLand${i}`).src = `images/buildingmap/arena${arenaNum}part${i}.png`
+        units[1].goldPerTurn += 15;
+        removeCostsforGoldBuildings(1500, 1500);
         }
     document.getElementById('arenaUpgrade').remove();
 } else{
     arenaNum += 1;
     for(i = 1; i < 5; i++){
         document.getElementById(`arenaLand${i}`).src = `images/buildingmap/arena${arenaNum}part${i}.png`
+        units[1].goldPerTurn += 15;
+        removeCostsforGoldBuildings(1500, 1500);
         }
-}
+}}
 })
 
 document.getElementById('workshopUpgrade').addEventListener('click', function(){
+    if(currentStone >= 600 && currentWood >= 750){
     if(workshopNum >= 9){
         workshopNum += 1;
         document.getElementById('workshop2').src = `images/buildingmap/workshop${(workshopNum - 5)}.png`;
+        units[1].goldPerTurn += 8;
+        removeCostsforGoldBuildings(750, 600);
         document.getElementById('workshopUpgrade').remove();
     } else if(workshopNum >= 5 && workshopNum <= 8){
         workshopNum += 1;
         document.getElementById('workshop2').src = `images/buildingmap/workshop${(workshopNum - 5)}.png`;
+        units[1].goldPerTurn += 8;
+        removeCostsforGoldBuildings(750, 600);
     } else{
         workshopNum += 1;
         document.getElementById('workshop1').src = `images/buildingmap/workshop${workshopNum}.png`;
+        units[1].goldPerTurn += 8;
+        removeCostsforGoldBuildings(750, 600);
     }
-})
+}})
 
 document.getElementById('armorStorageUpgrade').addEventListener('click', function(){
+    if(currentStone >= 600 && currentWood >= 600){
     if(armorStorageNum >= 9){
         armorStorageNum += 1;
         document.getElementById('armorStorage2').src = `images/buildingmap/armorStorage${(armorStorageNum - 5)}.png`;
+        units[1].goldPerTurn += 6;
+        removeCostsforGoldBuildings(600, 600);
         document.getElementById('armorStorageUpgrade').remove();
     } else if(armorStorageNum >= 5 && armorStorageNum <= 8){
         armorStorageNum += 1;
         document.getElementById('armorStorage2').src = `images/buildingmap/armorStorage${(armorStorageNum - 5)}.png`;
+        units[1].goldPerTurn += 6;
+        removeCostsforGoldBuildings(600, 600);
     } else{
         armorStorageNum += 1;
         document.getElementById('armorStorage1').src = `images/buildingmap/armorStorage${armorStorageNum}.png`;
+        units[1].goldPerTurn += 6;
+        removeCostsforGoldBuildings(600, 600);
     }
-})
+}})
 
 document.getElementById('academiaUpgrade').addEventListener('click', function(){
+    if(currentStone >= 500 && currentWood >= 500){
     if(academiaNum >= 9){
         academiaNum += 1;
         document.getElementById('academia2').src = `images/buildingmap/academia${(academiaNum - 5)}.png`;
+        units[1].goldPerTurn += 5;
+        removeCostsforGoldBuildings(500, 500);
         document.getElementById('academiaUpgrade').remove();
     } else if(academiaNum >= 5 && academiaNum <= 8){
         academiaNum += 1;
         document.getElementById('academia2').src = `images/buildingmap/academia${(academiaNum - 5)}.png`;
+        units[1].goldPerTurn += 5;
+        removeCostsforGoldBuildings(500, 500);
     } else{
         academiaNum += 1;
         document.getElementById('academia1').src = `images/buildingmap/academia${academiaNum}.png`;
+        units[1].goldPerTurn += 5;
+        removeCostsforGoldBuildings(500, 500);
     }
-})
+}})
 
 let forester1Num = 0;
 let forester2Num = 0;
@@ -2340,23 +2414,53 @@ _armoredUpgrade8.addEventListener('mouseenter', function(){
 
 document.getElementById('tannerUpgrade').addEventListener('mouseenter', function(){
     buyInformation.innerHTML = "Construct and upgrade camp tanneries";
-    buyCosts.innerHTML = "200 gold, 50 stone, 100 wood";
-    buyBenefits.innerHTML = "Increases income by +10 gold";
+    buyCosts.innerHTML = "50 wood and 50 stone";
+    buyBenefits.innerHTML = "+2 Sestertius per turn";
 })
 document.getElementById('blacksmithUpgrade').addEventListener('mouseenter', function(){
     buyInformation.innerHTML = "Construct and upgrade camp blacksmiths";
-    buyCosts.innerHTML = "500 gold, 100 stone, 175 wood";
-    buyBenefits.innerHTML = "Increases income by +10 gold";
+    buyCosts.innerHTML = "50 wood and 50 stone";
+    buyBenefits.innerHTML = "+2 Sestertius per turn";
 })
 document.getElementById('latrineUpgrade').addEventListener('mouseenter', function(){
     buyInformation.innerHTML = "Construct and upgrade camp latrines";
-    buyCosts.innerHTML = "250 gold, 50 stone, 150 wood";
-    buyBenefits.innerHTML = "Increases income by +10 gold";
+    buyCosts.innerHTML = "150 wood and 150 stone";
+    buyBenefits.innerHTML = "+3 Sestertius per turn";
 })
 document.getElementById('templeUpgrade').addEventListener('mouseenter', function(){
-    buyInformation.innerHTML = "Construct and upgrade camp temples";
-    buyCosts.innerHTML = "1000 gold, 250 stone, 450 wood";
-    buyBenefits.innerHTML = "Increases income by +10 gold";
+    buyInformation.innerHTML = "Construct and upgrade a temple";
+    buyCosts.innerHTML = "500 wood and 350 stone";
+    buyBenefits.innerHTML = "+7 Sestertius per turn";
+})
+document.getElementById('mintUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade a mint";
+    buyCosts.innerHTML = "750 wood and 600 stone";
+    buyBenefits.innerHTML = "+10 Sestertius per turn";
+})
+document.getElementById('merchantUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade a merchant's shop";
+    buyCosts.innerHTML = "950 wood and 800 stone";
+    buyBenefits.innerHTML = "+11 Sestertius per turn";
+})
+document.getElementById('arenaUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade an arena";
+    buyCosts.innerHTML = "1500 wood and 1500 stone";
+    buyBenefits.innerHTML = "+15 Sestertius per turn";
+})
+document.getElementById('workshopUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade a workshop for your camp";
+    buyCosts.innerHTML = "750 wood and 600 stone";
+    buyBenefits.innerHTML = "+8 Sestertius per turn";
+})
+document.getElementById('armorStorageUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade a storage for your unit's armor";
+    buyCosts.innerHTML = "600 wood and 600 stone";
+    buyBenefits.innerHTML = "+6 Sestertius per turn";
+})
+document.getElementById('academiaUpgrade').addEventListener('mouseenter', function(){
+    buyInformation.innerHTML = "Construct and upgrade an academia for your soldiers";
+    buyCosts.innerHTML = "500 wood and 500 stone";
+    buyBenefits.innerHTML = "+5 Sestertius per turn";
 })
 
 /* next turn stuff */
