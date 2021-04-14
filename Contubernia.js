@@ -2547,8 +2547,8 @@ let oldDignitas = 0;
 let changedDignitas = 0;
 let currentStone = 0;
 let currentWood = 0;
-let woodChangeperTurn = 50;
-let stoneChangeperTurn = 50;
+let woodChangeperTurn = 5;
+let stoneChangeperTurn = 5;
 let nextTurnSound = new Audio();
 nextTurnSound.src = 'soundfiles/otherSounds/nextTurn.mp3';
 
@@ -2645,6 +2645,27 @@ buttonForNextTurn.addEventListener('click', function(){
     currentStone += stoneChangeperTurn;
     document.getElementById('currentWood').innerHTML = `<img src="images/woodIcon.png" class="resourceImg">:  ${currentWood}`;
     document.getElementById('currentStone').innerHTML = `<img src="images/stoneIcon.png" class="resourceImg">:  ${currentStone}`;
+
+    if(totalFood <= -1 ){
+        for(let i = 1; i < 11; i++){
+            units[i].healthPoints -= 10;
+            displayedHealthPointsOfUnit.innerHTML = `Health: ${units[selectedUnit].healthPoints} / ${units[selectedUnit].maxHealthPoints}`;
+            displayHealthInFigure.style.width = parseInt((units[selectedUnit].healthPoints / units[selectedUnit].maxHealthPoints) * 100) + "%";
+            document.getElementById(`healthBarFigureUnit${i}`).style.width = parseInt((units[i].healthPoints / units[i].maxHealthPoints) * 100) + "%";
+            if(units[i].healthPoints <= 0){
+                document.getElementById(`unit${i}`).style.display = "none";
+                units[i].intelligence = 0;
+                units[i].strength = 0;
+                units[i].cunning = 0;
+                units[i].gravitas = 0;
+                units[i].level = 0;
+                units[i].foodUse = 0;
+                units[i].goldPerTurn = 0;
+                units[i].foodCreate = 0;
+            }
+        }
+    }
+
 
     /* If next turn is clicked, this will set the next month and year */
     if(currentMonth <= 10){
